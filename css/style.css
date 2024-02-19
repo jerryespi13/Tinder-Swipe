@@ -13,6 +13,17 @@ body{
     background: #efefef;
 }
 
+.white-bkg{
+    position: absolute;
+    background: #f6f6f6;
+    inset: 0;
+    z-index: -10;
+}
+
+.shadow{
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3))
+}
+
 main{
     background: url('/imagenes/iphone.webp') no-repeat;
     background-size: contain;
@@ -63,32 +74,32 @@ footer{
         border: 0;
         cursor: pointer;
         transition: scale .3s ease;
-    }
+        
+        &:hover{
+            scale: 1.4;
+        }
 
-    &:hover{
-        scale: 1.4;
-    }
+        &.is-big{
+            background-size: 250px;
+            width: 48px;
+            height: 48px;
+        }
 
-    & .is-big{
-        background-size: 250px;
-        width: 48px;
-        height: 48px;
-    }
+        &.is-undo{
+            background-position: -140px 0;
+        }
 
-    & .is-undo{
-        background-position: -140px 0;
-    }
+        &.is-remove{
+            background-position: -150px 0;
+        }
 
-    & .is-remove{
-        background-position: -150px 0;
-    }
+        &.is-fav{
+            background-position: -50px 0;
+        }
 
-    & .is-fav{
-        background-position: -50px 0;
-    }
-
-    & .is-star{
-        background-position: -70px 0;
+        &.is-star{
+            background-position: -70px 0;
+        }
     }
 }
 
@@ -124,12 +135,12 @@ footer{
             transform: translateX(-150%) rotate(-30 deg) !important;
         }
 
-        & .go-rigth{
+        & .go-right{
             transform: translateX(150%) rotate(30 deg) !important;
         }
 
         & .go-left,
-        & .go-rigth{
+        & .go-right{
             transition: transform .3s ease, rotate .3s ease;
         }
 
